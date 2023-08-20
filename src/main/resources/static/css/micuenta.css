@@ -1,0 +1,21 @@
+body{
+    background: url("../img/Fondo2.jpg");
+}
+
+li {
+    border-radius: 20px;
+}
+
+
+
+.container{
+    margin-left: 600px;
+}
+
+.btn {
+    font-size: 20px;
+    font-weight: 600;
+    font-family: 'Belanosima', sans-serif;
+    border-radius: 30px;
+}
+

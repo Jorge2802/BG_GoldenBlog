@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+
+<head xmlns:th="http://www.thymeleaf.org">
+  <!-- Metadatos -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Golden Blog">
+  <meta name="description" content="Pag de registro de libros de Golden Blog">
+
+  <!-- Bootstrap-->
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" rel="stylesheet">
+  <!-- Titulo de la pag website -->
+  <title>Golden Blog - Registrar Libros</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/img/Logo.png">
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/editar_usuario.css">
+  <!--Icons Flaticon -->
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-solid-straight/css/uicons-solid-straight.css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-bold-straight/css/uicons-bold-straight.css'>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chela+One&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Belanosima&family=Chela+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header>
+  <nav class="navbar border-bottom border-bottom-dark" style="background: #af9542" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">EDITAR USUARIO</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+              aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" th:href="@{/menu}">Menu Principal</a>
+          <a class="nav-link" th:href="@{/libros}">Buscar Libros</a>
+          <a class="nav-link" th:href="@{/prestamos}">Solicitar Prestamo</a>
+          <a class="nav-link" th:href="@{/valoraciones}">Valorar Libro</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+</header>
+  <div class="wrapper">
+
+  <div class="form-box login">
+    <form th:if="${modo == 'edicion'}" th:action="@{|/editarusuario/${usuario.id}|}" method="post">
+      <input type="hidden" th:field="*{usuario.id}" />
+
+      <div class="input-box">
+        <span class="icon"><i class="fi fi-bs-heading"></i></span>
+        <input type="text" th:field="*{usuario.nombre}" class="form-control" required>
+        <label>NOMBRE</label>
+      </div>
+
+      <div class="input-box">
+        <span class="icon"><i class="fi fi-br-copyright"></i></span>
+        <input type="text" th:field="*{usuario.apellido}" class="form-control" required>
+        <label>APELLIDOS</label>
+      </div>
+
+      <div class="input-box">
+        <span class="icon"><i class="fi fi-ss-book-font"></i></span>
+        <input type="text" th:field="*{usuario.DNI}" class="form-control" required>
+        <label>DNI</label>
+      </div>
+
+      <div class="input-box">
+        <span class="icon"><i class="fi fi-ss-calendar-clock"></i></span>
+        <input type="text" th:field="*{usuario.email}" class="form-control" required>
+        <label>GMAIL</label>
+      </div>
+
+      <div class="input-box">
+        <span class="icon"><i class="fi fi-sr-clip"></i></span>
+        <input type="password" th:field="*{usuario.password}" class="form-control" required>
+        <label>PASSWORD</label>
+      </div>
+
+      <br>
+      <div class="box-footer">
+        <input type="submit" value="GUARDAR" class="btn btn-dark">
+      </div>
+    </form>
+  </div>
+</div>
+<script crossorigin="anonymous"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

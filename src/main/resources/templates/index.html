@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <!-- Metadatos -->
+    <meta charset="UTF-8">
+    <meta content="Golden Blog" name="author">
+    <meta content="Menu Principal de Golden Blog" name="description">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <!-- Titulo -->
+    <title>Golden Blog - Inicio</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/img/Logo.png">
+    <!-- Bootstrap -->
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" rel="stylesheet">
+    <!-- Iconos de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- CSS -->
+    <link href="/css/menu.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&family=Rubik+Dirt&family=Share+Tech+Mono&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Caprasimo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Belanosima&family=Chela+One&display=swap" rel="stylesheet">
+
+    <!-- Iconos de Flaticon -->
+    <link href='https://cdn-uicons.flaticon.com/uicons-solid-straight/css/uicons-solid-straight.css' rel='stylesheet'>
+    <link href='https://cdn-uicons.flaticon.com/uicons-bold-straight/css/uicons-bold-straight.css' rel='stylesheet'>
+    <link href='https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css' rel='stylesheet'>
+    <link href='https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css' rel='stylesheet'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+
+
+</head>
+<body>
+
+<!-- Barra de navegacion -->
+<div class="container-imagen">
+
+    <nav class="navbar navbar-expand-md navbar-light">
+
+        <div class="container-fluid">
+            <button aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
+                    data-bs-target="#navbar-toggler" data-bs-toggle="collapse" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar-toggler">
+                <a class="navbar-brand" href="#">
+                    <img alt="Logo de la página web" src="/img/LogoGrandeDorado.png" width="50">
+                </a>
+                <ul class="navbar-nav d-flex justify-content-center align-items-center">
+                    <li class="nav-item">
+                        <a aria-current="page" class="nav-link " href="#sobre-nosotros">Sobre Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#funciones">Funciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a sec:authorize="hasRole('ROLE_USER')" class="nav-link" th:href="@{/micuenta/{id}(id=${usuario?.id})}">Mi cuenta</a>
+                    </li>
+
+                    <li class="nav-item" sec:authorize="isAuthenticated()">
+                        <a class="nav-link" th:href="@{/logout}">Cerrar Sesión</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Seccion Hero -->
+    <section class="hero align-items-stretch">
+        <div class="hero-principal d-flex flex-column justify-content-center align-items-center">
+            <h1>BIENVENIDO A GOLDEN BLOG</h1>
+            <img src="/img/LOGOGOLDEN.jpg" alt="">
+        </div>
+    </section>
+</div>
+
+<!-- Sobre nosotros -->
+<section class="sobre-nosotros" id="sobre-nosotros">
+
+    <div class="contenedor">
+        <h2 class="seccion-titulo">Quiénes Somos</h2>
+        <p class="seccion-texto">Somos una biblioteca digital comprometida con la difusion del conocimiento y el acceso
+            universal a la información, brindando recursos educativos y culturales en un entorno digital.</p>
+        <h2 class="seccion-titulo">Visión</h2>
+        <p class="seccion-texto">Es facilitar el aprendizaje y enrequecimiento personal, ofreciendo una amplia variedad
+            de materiales digitales de alta calidad y promoviendo la alfabetización digital en todas las personas, sin
+            importar su ubicacion o circunstancias.</p>
+        <h2 class="seccion-titulo">Misión</h2>
+        <p class="seccion-texto">Es ser líderes en la democratización del conocimiento, promoviendo el acceso equitativo
+            a la informacion, estimulando la curiosidad intelectual y empoderando a individuos y comunidades a traves de
+            nuestra plataforma de biblioteca digital de vanguardia.</p>
+    </div>
+</section>
+
+<!-- Funciones -->
+<section class="funciones" id="funciones">
+
+    <div class="container text-center">
+        <h2 class="seccion-titulo">CONOCE NUESTRAS FUNCIONES</h2>
+        <div class="row">
+            <!-- Buscar Libro -->
+            <div class="columna col-12 col-md-6">
+                <a th:href="@{/libros}" style="text-decoration: none;"><i
+                        class="fi fi-br-search-alt"></i></a>
+                <p class="funciones-titulo">Buscar Libros</p>
+                <p class="funcion-descripcion">Sumérgete en nuestro vasto catálogo y desata tu curiosidad. Encuentra ese libro que te transportará a
+                    lugares desconocidos, te inspirará o te hará soñar.</p>
+                <div class="badges-contenedor">
+                    <span class="badge text-bg-dark">Explorador</span>
+                    <span class="badge text-bg-dark">Buscador de Tesoros</span>
+                    <span class="badge text-bg-dark">Detective Literario</span>
+                </div>
+            </div>
+
+            <!-- Ver mis Prestamos -->
+            <div class="columna col-12 col-md-6">
+                <a th:href="@{/prestamos}"
+                   style="text-decoration: none;"><i class="fi fi-rs-briefcase-blank"></i></a>
+                <p class="funciones-titulo">Ver Préstamos</p>
+                <p class="funcion-descripcion">Lleva contigo el poder de las palabras. Te ofrecemos la oportunidad de disfrutar de tus libros
+                    favoritos, llevándolos a casa para que te acompañen en cada aventura y momento de lectura. </p>
+                <div class="badges-contenedor">
+                    <span class="badge text-bg-dark">Lector en Movimiento</span>
+                    <span class="badge text-bg-dark">Explorador de Préstamos</span>
+                    <span class="badge text-bg-dark">Amante de Libros</span>
+                </div>
+            </div>
+            <!-- Ver Valoraciones -->
+            <div class="columna col-12 col-md-6">
+                <a th:href="@{/valoraciones}" style="text-decoration: none;"><i
+                        class="fi fi-br-book-tanakh"></i></a>
+
+                <p class="funciones-titulo">Ver Valoraciones</p>
+                <p class="funcion-descripcion">Tus opiniones importan. Comparte tus impresiones y haz que tus voces sean escuchadas. Ayuda a otros
+                    lectores a descubrir joyas literarias y juntos construyamos una comunidad de amantes de la
+                    lectura. </p>
+                <div class="badges-contenedor">
+                    <span class="badge text-bg-dark">Gurú de Valoraciones</span>
+                    <span class="badge text-bg-dark">Arbitro de Historias</span>
+                    <span class="badge text-bg-dark">Crítico Literario</span>
+                </div>
+            </div>
+
+            <!-- Ver Usuarios -->
+            <div sec:authorize="hasRole('ADMIN')" class="columna col-12 col-md-6">
+                <a th:href="@{/verusuarios}" style="text-decoration: none;"><i class="fi fi-sr-users-alt"></i></a>
+
+                <p class="funciones-titulo">Ver Usuarios</p>
+                <p class="funcion-descripcion">"Obtén una visión completa de los perfiles de usuarios como administrador en nuestra biblioteca, gestionando detalles clave y historiales de préstamos con facilidad." </p>
+                <div class="badges-contenedor">
+                    <span class="badge text-bg-dark">Historiador Literario</span>
+                    <span class="badge text-bg-dark">Perfil Insight</span>
+                    <span class="badge text-bg-dark">Maestro de Usuarios</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="Preguntas">
+    <h2 class="seccion-titulo" style="color: white">PREGUNTAS FRECUENTES</h2>
+    <div class="container">
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        Pregunta 01: ¿Cómo solicito un préstamo de libro?
+                    </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Puedes solicitar un préstamo de libro iniciando sesión en tu cuenta, navegando por el catálogo y seleccionando el libro que deseas. Luego, sigue los pasos indicados para completar la solicitud, finalmente podras acceder a un resumen de tu prestamo en la seccion de ver mis prestamos.</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        Pregunta 02: ¿Cómo puedo valorar y reseñar un libro?
+                    </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Después de iniciar sesión, busca el libro que deseas valorar en el catálogo. Dentro de la página del libro, encontrarás la opción de valorar y dejar una reseña. Tus opiniones son importantes para otros usuarios y para nosotros.</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        Pregunta 03: ¿Cómo puedo contactar a la biblioteca para hacer preguntas adicionales?
+                    </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Puedes ponerte en contacto con nosotros a través de la sección de "Contacto" en nuestro sitio web. También puedes llamarnos al [935 872 325] o enviar un correo electrónico a bdgoldenblog@gmail.com.</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                        Pregunta 04: ¿Cuánto tiempo dura un préstamo de libro?
+                    </button>
+                </h2>
+                <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">El período de préstamo estándar es de [15] días. Puedes consultar la fecha de vencimiento iniciando sesion en tu cuenta, dirigiendote al apartado de Ver mis Prestamos, accion continua dando click a ver detalles, en donde podras acceder a todos los detalles de tu prestamo.</div>
+                </div>
+            </div>
+        </div>
+        <a href="https://www.facebook.com/profile.php?id=61550494737271" target="_blank" class="chat-bubble"><img class="golden-bot" src="/img/goldenbot.png" alt="imagen de bot"></a>
+|
+    </div>
+</section>
+
+<!-- Contacto -->
+<section class="contacto seccion-image" id="contacto">
+
+    <div class="container">
+        <div class="container text-center rectangulo d-flex justify-content-evenly">
+            <div class="row">
+                <div class="col-12 col-md-4 seccion-titulo" style="color: white">
+                    ¡Contactanos!
+                </div>
+                <div class="col-12 col-md-4 descripcion">
+                    Nuestro amable equipo de atención al cliente está listo para ayudarte en todo lo que necesites.
+
+                </div>
+                <div class="col-12 col-md-4">
+                    <a href="mailto:tejorge06@gmail.com">
+                        <button type="button">
+                            Contacto
+                            <i class="bi bi-envelope-check-fill"></i>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pie de pagina (footer) -->
+<footer class="seccion-oscura d-flex flex-column align-items-center justify-content-center">
+
+    <img alt="Logo del portafolio" class="footer-logo" src="/img/LOGOGOLDEN.jpg">
+    <p class="footer-texto text-center">SOMOS GOLDEN BLOG <br>TU BIBLIOTECA DE CONFIANZA</p>
+    <div class="iconos-redes-sociales d-flex flex-wrap align-items-center justify-content-center">
+        <a href="#" rel="noopener noreferrer" target="_blank">
+            <i class="bi bi-twitter"></i>
+        </a>
+        <a href="#" rel="noopener noreferrer" target="_blank">
+            <i class="bi bi-github"></i>
+        </a>
+        <a href="#" rel="noopener noreferrer" target="_blank">
+            <i class="bi bi-linkedin"></i>
+        </a>
+        <a href="#" rel="noopener noreferrer" target="_blank">
+            <i class="bi bi-instagram"></i>
+        </a>
+        <a href="mailto:tejorge06@gmail.com" rel="noopener noreferrer" target="_blank">
+            <i class="bi bi-envelope"></i>
+        </a>
+    </div>
+    <div class="derechos-de-autor">Creado por Golden Blog (2023) &#169;</div>
+</footer>
+
+
+<script crossorigin="anonymous"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" type="module"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

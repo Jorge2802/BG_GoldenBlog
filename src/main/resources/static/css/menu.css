@@ -1,0 +1,406 @@
+/* Barra de navegacion */
+
+.container-imagen {
+    background: url("../img/Fondo10.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.navbar {
+    padding: 2rem;
+    color: black;
+    font-weight: bold;
+    font-family: 'Caprasimo', cursive;
+}
+
+.navbar-nav a {
+    padding: 10px 15px 10px 15px;
+    border-radius: 30px;
+    margin-top: 20px;
+    margin-left: 25px;
+    backdrop-filter: blur(10px);
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #EABE3F;
+    color: #000;
+}
+
+.navbar a:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.navbar-collapse {
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Estilos generales */
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-family: 'Caprasimo', cursive;
+    background-color: transparent;
+    padding: 10px 15px 10px 15px;
+    border-radius: 30px;
+    color: #fff;
+    backdrop-filter: blur(10px);
+}
+
+.seccion-image {
+    color: black;
+    background: url("../img/Fondo10.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.seccion-titulo {
+    font-size: 2rem;
+    padding: 15px 0;
+    font-family: 'Rubik Dirt', cursive;
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+}
+
+.seccion-descripcion {
+    font-size: 1.2rem;
+}
+
+.seccion-texto {
+    font-size: 1.2rem;
+    background-color: transparent;
+    padding: 10px 15px;
+    border-radius: 30px;
+    color: #fff;
+    backdrop-filter: blur(10px);
+}
+
+.btn-info {
+    font-size: 1.1rem;
+    margin: 20px;
+}
+
+.texto-negro {
+    color: black;
+}
+
+.texto-blanco {
+    color: white;
+}
+
+/* Seccion Hero */
+
+.hero {
+    min-height: 450px;
+    text-align: center;
+}
+
+.hero-principal {
+    padding: 3rem;
+}
+
+.hero-principal h2 {
+    font-size: 1.5rem;
+    color: #615151;
+    background-color: transparent;
+    padding: 10px 15px 10px 15px;
+    border-radius: 30px;
+    color: #fff;
+    backdrop-filter: blur(10px);
+}
+
+/* Sobre nosotros */
+
+.sobre-nosotros {
+    height: 700px;
+    padding: 10px;
+    background: url("../img/Fondo13.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: white;
+
+}
+
+.sobre-nosotros .contenedor {
+    max-width: 600px;
+    height: 600px;
+    text-align: center;
+}
+
+/* Funciones */
+
+.funciones {
+    padding: 40px 40px 150px 40px;
+    background: url("../img/Fondo10.jpg");
+    color: #fff;
+}
+
+.funciones .columna {
+    padding: 20px;
+    border: 2px solid #8080804d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    transition: all 0.2s ease-in;
+    background: url("../img/Fondo8.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.funciones .columna:hover {
+    color: white;
+    background-color: #EABE3F;
+}
+
+.funciones i {
+    font-size: 2.5rem;
+    color: #EABE3F;
+    background-color: #000;
+    padding: 8px 19px;
+    border-radius: 50%;
+}
+
+.funciones-titulo {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.badges-contenedor {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.badge {
+    margin: 5px;
+    background: url("../img/Fondo5.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    font-size: 15px;
+}
+.funcion-descripcion {
+    font-weight: bold;
+    backdrop-filter: blur(30px);
+
+}
+
+
+/* Preguntas Frecuentes */
+
+.Preguntas{
+    min-height: 600px;
+    background: url("../img/Fondo10.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.Preguntas .container{
+    max-width: 1100px;
+    min-height: 300px;
+    margin-left: 230px;
+    background: url("../img/Fondo1.jpg");
+}
+
+.accordion-button {
+    background: url("../img/Fondo1.jpg");
+    color: white;
+    font-weight: 900;
+    font-size: 18px;
+}
+
+.accordion-button:hover {
+    background: #EABE3F ;
+    color: black;
+}
+
+.accordion-button:not(.collapsed) {
+    background: #EABE3F ;
+    color: black;
+}
+
+.accordion-body {
+    background: #000 ;
+    color: #EABE3F;
+    font-weight: bold;
+}
+
+/* Contacto */
+
+.contacto .container {
+    max-width: 1100px;
+    min-height: 200px;
+    padding: 20px;
+}
+
+.contacto .rectangulo {
+    margin-top: -5rem;
+    background: url("../img/Fondo12.jpg");
+    border-radius: 10px;
+    box-shadow: 0px 1px 4px 1px #EABE3F;
+}
+
+.contacto .row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.contacto .descripcion {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.contacto button {
+    color: white;
+    font-weight: bold;
+    background-color: transparent;
+    border: 2px solid white;
+    padding: 1.25em 2em;
+    margin: 10px;
+    border-radius: 100px;
+    transition: all 0.2s ease-in-out;
+}
+
+.contacto button:hover {
+    background-color: #EABE3F;
+    color: black;
+}
+
+.contacto button i {
+    color: white;
+    font-size: 1.3rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.contacto button:hover i {
+    color: black;
+}
+.chat-bubble {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #EABE3F;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.golden-bot{
+    border-radius: 10px;
+    height: 60px;
+    width: 60px;
+}
+
+
+/* Pie de pagina (footer) */
+
+footer {
+    min-height: 500px;
+    background: url("../img/Fondo10.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.footer-logo {
+    height: 80px;
+    width: 80px;
+    margin: 10px;
+    backdrop-filter: blur(10px);
+}
+
+.footer-texto {
+    font-size: 1.5rem;
+    padding: 20px;
+    margin-bottom: 30px;
+    font-family: 'Quicksand', sans-serif;
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    font-weight: bold;
+    color: #EABE3F;
+}
+
+.iconos-redes-sociales a {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    margin: 10px;
+    border: 2px solid #EABE3F;
+    border-radius: 50%;
+    transition: all 0.2s ease-in;
+    backdrop-filter: blur(10px);
+}
+
+.iconos-redes-sociales i {
+    color: white;
+    font-size: 1.5rem;
+    transition: all 0.2s ease-in;
+}
+
+.iconos-redes-sociales a:hover {
+    background-color: black;
+    border: 2px solid #EABE3F;
+}
+
+.iconos-redes-sociales a:hover i {
+    color: #EABE3F;
+}
+
+.derechos-de-autor {
+    font-size: 15px;
+    color: white;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    font-weight: bold;
+}
+
+/* Adaptable (Responsivo) */
+
+@media screen and (max-width: 400px) {
+    .overlay p {
+        font-size: 18px;
+    }
+
+    .overlay i {
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .navbar-brand {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .hero-inferior-imagen {
+        max-width: 600px;
+    }
+}
+
+
+
+
+

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+
+<head xmlns:th="http://www.thymeleaf.org">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Detalles Valoracion - Golden Blog</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/micuenta.css">
+</head>
+
+<body>
+
+<header>
+  <nav class="navbar border-bottom border-bottom-dark" style="background: #af9542" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">DETALLES VALORACION</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+              aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" th:href="@{/menu}">Menu Principal</a>
+          <a class="nav-link" th:href="@{/libros}">Buscar Libros</a>
+          <a class="nav-link" th:href="@{/prestamos}">Ver Prestamo</a>
+          <a class="nav-link" th:href="@{/valoraciones}">Ver Valoraciones</a>
+          <a class="nav-link" th:href="@{/verusuarios}">Ver Usuarios</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+</header>
+
+<br>
+
+  <div class="container">
+    <div class="card" style="width: 18rem; background: transparent">
+      <ul class="list-group list-group-flush">
+        <br>
+        <h3 style="color: white; font-family: 'Belanosima', sans-serif; text-align: center";>INFORMACION PERSONAL</h3> <br>
+        <li class="list-group-item"><span style="font-weight: bold"> Nombre:  </span> <span th:text="${usuario.nombre}"></span></li>
+        <br>
+        <li class="list-group-item"><span style="font-weight: bold">Apellidos:  </span> <span th:text="${usuario.apellido}"></span></li>
+        <br>
+        <li class="list-group-item"><span style="font-weight: bold">DNI:  </span> <span th:text="${usuario.DNI}"></span></li>
+        <br>
+        <li class="list-group-item"><span style="font-weight: bold">Email:  </span> <span th:text="${usuario.email}"></span></li>
+        <br>
+
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="card" style="width: 18rem; background: transparent">
+      <ul class="list-group list-group-flush">
+        <br>
+        <h3 style="color: white; font-family: 'Belanosima', sans-serif; text-align: center">DETALLES DEL LIBRO</h3> <br>
+        <li class="list-group-item"><span style="font-weight: bold">Título:  </span> <span th:text="${libro.titulo}"></span></li>
+        <br>
+        <li class="list-group-item"><span style="font-weight: bold">Autor:  </span> <span th:text="${libro.autor}"></span></li>
+        <br>
+        <li class="list-group-item"><span style="font-weight: bold">Editorial:  </span> <span th:text="${libro.editorial}"></span></li>
+        <br>
+        <li class="list-group-item"><span style="font-weight: bold">Año de Publicacion:  </span> <span th:text="${libro.ano_publicacion}"></span></li>
+        <br>
+        <li class="list-group-item"><span style="font-weight: bold">Tipo de Archivo:  </span> <span th:text="${libro.tipo_archivo}"></span></li>
+        <br>
+        <li class="list-group-item"><span style="font-weight: bold">Descripcion:  </span> <span th:text="${libro.descripcion}"></span></li>
+        <br>
+
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="card" style="width: 18rem; background: transparent">
+      <ul class="list-group list-group-flush">
+        <br>
+        <h3 style="color: white; font-family: 'Belanosima', sans-serif; text-align: center">DETALLES DE LA VALORACION</h3> <br>
+        <li class="list-group-item"><span style="font-weight: bold">Comentario:  </span> <span th:text="${valoraciones.comentario}"></span></li>
+        <br>
+        <li class="list-group-item"><span style="font-weight: bold">Fecha de Valoracion:  </span> <span th:text="${valoraciones.fecha_valoracion}"></span></li>
+        <br>
+        <br>
+      </ul>
+    </div>
+  </div>
+
+
+<footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+          crossorigin="anonymous"></script>
+</footer>
+
+</body>
+
+</html>

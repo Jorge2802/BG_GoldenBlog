@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Golden Blog - Log in</title>
+		<link rel="stylesheet" href="/css/login.css" />
+		<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+		<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-solid-straight/css/uicons-solid-straight.css'>
+		<link rel="icon" type="image/x-icon" href="/img/Logo.png">
+
+	</head>
+
+	<body>
+
+		<header class="header">
+			<nav class="navbar">
+				<a href="contacto">Contacto</a>
+				<a href="#funciones">Funciones</a>
+				<a href="#sobre-nosotros">Sobre Nosotros</a>
+				<a href="#">BIENVENIDO</a>
+			</nav>
+			<form action="#" class="search-bar">
+				<input type="text" placeholder="Buscar...">
+				<button type = "submit"><i class='bx bx-search-alt-2' ></i></button>
+			</form>
+		</header>
+
+
+		<div class="background">
+
+		</div>
+
+		<div class="container">
+			<div class="content">
+				<h2 class="logo"><i class="fi fi-ss-book-open-cover"></i>  Golden Blog</h2>
+
+				<div class="text-sci">
+					<h2>Bienvenido! <br><span>A nuestro nuevo sitio web</span></h2>
+
+					<p>Descubre un mundo de conocimiento en línea. <br>Accede a nuestra amplia colección de libros <br>electrónicos, revistas y más desde cualquier <br>lugar. Inicia Sesión o Regístrate ahora y <br>sumérgete en la lectura virtual.</p>
+					<div class="social-icons">
+						<a href="#"><i class='bx bxl-facebook-circle' ></i></a>
+						<a href="#"><i class='bx bxl-instagram-alt' ></i></a>
+						<a href="#"><i class='bx bxl-twitter' ></i></a>
+						<a href="#"><i class='bx bxl-youtube' ></i></a>
+					</div>
+				</div>
+			</div>
+
+			<div class="logreg-box">
+				<div class="form-box login">
+					<form th:action="@{/login}" method="post">
+						<h2>Iniciar Sesión</h2>
+						<br>
+						<div th:if=${param.error}>
+							<div class="alert alert-danger">Usuario o contraseña
+								inválidos</div>
+						</div>
+						<br>
+						<div th:if=${param.logout}>
+							<div class="alert alert-info">Ha cerrado sesión exitosamente
+							</div>
+						</div>
+
+						<div class="input-box">
+							<span class="icon"><i class='bx bxs-envelope' ></i></span>
+							<input id="username"  name="username" type="email" class="form-control"
+								   required autofocus="autofocus">
+							<label for="username">EMAIL</label>
+						</div>
+
+						<div class="input-box">
+							<span class="icon"><i class='bx bxs-lock-alt' ></i></span>
+							<input id="password" type="password"  name="password" class="form-control" required
+								   autofocus="autofocus">
+							<label for="password">PASSWORD</label>
+						</div>
+
+						<div class="remember-forgot">
+							<label><input type="checkbox">Recordar Password</label>
+						</div>
+
+						<input type="submit" class="form-control btn" name="login-submit" id="login-submit" value="Iniciar sesión" />
+
+						<div class="login-register">
+							<p>Todavia no tienes una Cuenta? <a th:href="@{/registro}" class="register-link">Regístrate</a></p>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+
+	</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
